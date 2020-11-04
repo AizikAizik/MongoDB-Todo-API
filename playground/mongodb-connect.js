@@ -9,7 +9,7 @@ MongoClient.connect(URL, (err, client) =>{
     console.log('Connected to the MongoDb service successfully!!');
     const db = client.db('TodoApp');
 
-    add Todo Collection
+    //add Todo Collection
     db.collection('Todos')
         .insertMany(
             [
