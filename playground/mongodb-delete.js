@@ -3,7 +3,7 @@ const URL = 'mongodb://localhost:27017/TodoApp'
 
 MongoClient.connect(URL, (error, client) =>{
     if(error){
-        console.error('Unable to connect to the MongoDB service!!')
+        return console.error('Unable to connect to the MongoDB service!!')
     }
 
     console.log('Connected to the MongoDb service successfully!!');
