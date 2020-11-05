@@ -10,27 +10,27 @@ MongoClient.connect(URL, (err, client) =>{
     const db = client.db('TodoApp');
 
     //find all items
-    // db.collection('Todos').
-    //     find() // find() returns a Cursor
-    //     .toArray() // toArray() returns a Promise
-    //     .then((docs) =>{
-    //         console.log('Todos');
-    //         console.log(JSON.stringify(docs, null, 2));
-    //     })
-    //     .catch(err => {
-    //         console.error('error fetching from database!!!', err)
-    //     })
+    db.collection('Todos').
+        find() // find() returns a Cursor
+        .toArray() // toArray() returns a Promise
+        .then((docs) =>{
+            console.log('Todos');
+            console.log(JSON.stringify(docs, null, 2));
+        })
+        .catch(err => {
+            console.error('error fetching from database!!!', err)
+        })
 
     //find the number of counts stored
-    // db.collection('Todos')
-    //     .find()
-    //     .count()
-    //     .then(count =>{
-    //         console.log(`Number of records returned are: ${count}`);
-    //     })
-    //     .catch(err =>{
-    //         console.error(err);
-    //     })
+    db.collection('Todos')
+        .find()
+        .count()
+        .then(count =>{
+            console.log(`Number of records returned are: ${count}`);
+        })
+        .catch(err =>{
+            console.error(err);
+        })
 
     //find a specific document by the _id property
     db.collection('Todos')
